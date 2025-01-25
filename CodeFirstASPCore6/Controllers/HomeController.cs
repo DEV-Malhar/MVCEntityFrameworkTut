@@ -34,8 +34,8 @@ namespace CodeFirstASPCore6.Controllers
         #endregion
 
         #region Index   
-
-        public async Task<IActionResult> Index()
+       
+        public async Task<IActionResult> Index()  //View Page
         {
             var stdData = await stDb.Students.ToListAsync(); //to access the data this Line is Written
             return View(stdData);
@@ -50,7 +50,7 @@ namespace CodeFirstASPCore6.Controllers
             {
                 await stDb.Students.AddAsync(std);                     //This Will add data to Database
                 await stDb.SaveChangesAsync();                         //This will save changes
-                TempData["insert_success"] = "Insrted Successful...."; //This will Display Message after create 
+                TempData["insert_success"] = "Inserted Successful...."; //This will Display Message after create 
                 return RedirectToAction("Index");           //This will redirect to the Index page
             }
             return View(std);
@@ -133,9 +133,10 @@ namespace CodeFirstASPCore6.Controllers
         public async Task<IActionResult> DeleteConfirm(int? id)
         {
             var stdData = await stDb.Students.FindAsync(id);
-            if(stdData == null)
+            if(stdData != null)
             {
                 stDb.Remove(stdData);
+                TempData["delete_success"] = "Deleted Successful...."; //This will Display Message after create
             }
             await stDb.SaveChangesAsync();
             return RedirectToAction("Index","Home");

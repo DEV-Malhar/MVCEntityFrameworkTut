@@ -12,10 +12,17 @@
 
 @{
     //Here Message like Alert Banner is displayed
-    if(TempData["insert_success"]! == null)
+    if(TempData["insert_success"] != null)
     {
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Insert Success</strong> @TempData["insert_success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    if (TempData["delete_success"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Deleted Success</strong> @TempData["delete_success"]
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
@@ -38,7 +45,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.StdStd)
             </th>
-            <th></th>
+            <th>
+                <label>Actions</label>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -61,7 +70,7 @@
                     @Html.DisplayFor(modelItem => item.StdStd)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.StdId">Edit</a> |
+                    <a asp-action="Edit"  asp-route-id="@item.StdId">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.StdId">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.StdId">Delete</a>
                 </td>
