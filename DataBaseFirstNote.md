@@ -15,7 +15,7 @@
 																
 			Existing			   *Command*    			    Model Class
 			Database	---->   Scaffold DbContext  ---->			+
-			Tables												DbContext Class
+			Tables											   DbContext Class
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 #Steps:
@@ -33,7 +33,7 @@
 	   >command:Will Execute for First Time after Creating Database
 	   
 		    "Scaffold-DbContext"server=ServerName;database=DatabaseName;trusted_connection=true"
-						Microsoft.EntityFrameworkCoreSqlServer-OutputDir Models " -->
+			 Microsoft.EntityFrameworkCoreSqlServer-OutputDir Models " -->
 		
 		      This Command will generate model class and DbContext class Automatically
 
@@ -41,4 +41,14 @@
 	   
 		    "Scaffold-DbContext"server=ServerName;database=DatabaseName;trusted_connection=true"
 						Microsoft.EntityFrameworkCoreSqlServer-OutputDir Models -force " -->
-		
+  >Step3:
+		 
+		 -> Move Connection String from DbCOntext Class to appsettings.json file
+
+  >Step4:
+
+		-> Registring Connection String in Program.cs File
+			var provider = builder.Services.BuildServiceProvider();
+			var config = provider.GetRequiredService<IConfiguration>();
+			builder.Services.AddDbContext<DatabaseFirstASPCore6DbContext>(item => item.UseSqlServer(config.GetConnectionString("dbcs")));
+			
