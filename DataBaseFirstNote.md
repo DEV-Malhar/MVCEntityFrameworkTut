@@ -32,8 +32,7 @@
 
 	   >command:Will Execute for First Time after Creating Database
 	   
-		    "Scaffold-DbContext"server=ServerName;database=DatabaseName;trusted_connection=true"
-			 Microsoft.EntityFrameworkCoreSqlServer-OutputDir Models " -->
+		    "Scaffold-DbContext "Server=LAPTOP-EMFFE972\SQLEXPRESS;Database=DatabaseName;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models " -->
 		
 		      This Command will generate model class and DbContext class Automatically
 
