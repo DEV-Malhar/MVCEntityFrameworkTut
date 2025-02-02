@@ -20,7 +20,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="StudentGender" class="control-label"></label>
-                <input asp-for="StudentGender" class="form-control" />
+                <select asp-for="StudentGender" asp-items="@ViewBag.Gender" class="form-select">
+                    <option value="">Select Gender</option>
+                </select>
                 <span asp-validation-for="StudentGender" class="text-danger"></span>
             </div>
             <div class="form-group">
