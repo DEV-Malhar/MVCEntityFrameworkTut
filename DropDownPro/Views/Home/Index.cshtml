@@ -1,4 +1,4 @@
-﻿
+﻿@model ProDropDownDB.Models.StudentModels;
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -7,3 +7,20 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+<form asp-contoller="Home" asp-action="Index" method="post">
+<label>Select Student Name</label>
+<select asp-for="studId" class="form-control" asp-items="@(new SelectList(Model.studList,"Value","Text"))">
+    @* <option value="value">text</option> *@
+</select>
+<br />
+<input type="submit" value="submit" class="btn btn-success"/> @*Here Submit Button is set  *@
+</form>
+<br />
+@* Once Submit Button is clicked then Student Name is Seen through ViewBag*@
+@{
+    if (ViewBag.selectedValue !=null)
+    {
+        <h2>Select Student Name: @ViewBag.selectedValue</h2>
+    }
+
+}

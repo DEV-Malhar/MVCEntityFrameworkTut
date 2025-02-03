@@ -18,7 +18,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{580079
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProLoginFormASPCore", "ProLoginFormASPCore\ProLoginFormASPCore.csproj", "{3E364852-E960-4346-AF8F-7502AAD4DCC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProDropDown", "DropDownPro\ProDropDown.csproj", "{27A1C1D5-8DCD-4254-BF6C-8877E57367FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProDropDownDB", "DropDownPro\ProDropDownDB.csproj", "{27A1C1D5-8DCD-4254-BF6C-8877E57367FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckBoxInAspCore", "CheckBoxInAspCore\CheckBoxInAspCore.csproj", "{09967312-A2DB-416A-B0E1-1972A3B7E99C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +48,10 @@ Global
 		{27A1C1D5-8DCD-4254-BF6C-8877E57367FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27A1C1D5-8DCD-4254-BF6C-8877E57367FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27A1C1D5-8DCD-4254-BF6C-8877E57367FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09967312-A2DB-416A-B0E1-1972A3B7E99C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09967312-A2DB-416A-B0E1-1972A3B7E99C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09967312-A2DB-416A-B0E1-1972A3B7E99C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09967312-A2DB-416A-B0E1-1972A3B7E99C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

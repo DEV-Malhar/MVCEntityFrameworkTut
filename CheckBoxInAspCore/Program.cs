@@ -1,15 +1,7 @@
-using Microsoft.EntityFrameworkCore;
-using ProDropDownDB.Models;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-//Db Configuration
-var provider = builder.Services.BuildServiceProvider();
-var config =provider.GetRequiredService<IConfiguration>();
-builder.Services.AddDbContext<MytestDatabaseContext>(item => item.UseSqlServer(config.GetConnectionString("dbcs")));
 
 var app = builder.Build();
 
